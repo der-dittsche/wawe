@@ -6,6 +6,7 @@
         <li class="nav__menu-item"><RouterLink to="/">Start</RouterLink></li>
         <li class="nav__menu-item"><RouterLink to="/date">Termine</RouterLink></li>
         <li class="nav__menu-item"><RouterLink to="/about">Über uns</RouterLink></li>
+        <li class="nav__menu-item"><RouterLink to="/resilience">Resilienz</RouterLink></li>
         <li class="nav__menu-item"><RouterLink to="/group">Gruppen</RouterLink></li>
         <li class="nav__menu-item"><RouterLink to="/blog">Blog</RouterLink></li>
         <li class="nav__menu-item"><RouterLink to="/contact">Kontakt</RouterLink></li>
@@ -16,15 +17,17 @@
     </div>
   </nav>
 </template>
+
 <script setup>
 import { RouterLink } from 'vue-router'
 </script>
+
 <style scoped>
 .nav__top {
-  background-color: lightgreen;
+  background-image: linear-gradient(90deg, #f7fee79d, #d9f99d91, #f7fee7bd);
   display: flex;
   gap: 2rem;
-  box-shadow: 1px 1px 2px darkgreen;
+  box-shadow: 1px 1px 10px #d9f99d;
 }
 .nav__top-logo {
   flex: 1;
@@ -40,10 +43,25 @@ import { RouterLink } from 'vue-router'
   width: 100%;
   justify-content: center;
 }
+
+@media screen and (max-width: 1139px) {
+  .nav__menu-list {
+    display: none;
+  }
+}
 .nav__menu-item {
   cursor: pointer;
   padding-inline: 2rem;
   padding-block: 1rem;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  transition: background-color 1s ease;
+}
+
+.nav__menu-item:hover,
+.nav__menu-item:active {
+  background-color: #d9f99d91;
+  border: 2px solid rgb(217, 249, 157);
 }
 .nav__menu-item a {
   text-decoration: none;
