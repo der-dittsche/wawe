@@ -1,0 +1,11 @@
+name: Prettier
+on: [push]
+
+jobs:
+  build:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      -uses: actions/checkout@v3
+      -run: npm run format
+      -run: git status
